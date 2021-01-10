@@ -1,7 +1,13 @@
 .my-class-1 {
+    font-size: 18px;
     color: aqua;
 }
 
 #my-id-1 {
     color: chartreuse;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
 }
