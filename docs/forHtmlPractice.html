@@ -10,92 +10,117 @@
         <title>HTML pratice</title>
     </head>
     <body>
-        <div class="char-white">
-            <h2>目録</h2>
-            <p>
-                <ol>
-                    <li><a href="#aboutP">&lt;p&gt;について</a></li>
-                </ol>
-            </p>
-        </div>
-        <h1 class="char-white" > </h1>
-        <div class="char-white">
-            <h2 id="aboutP" >&lt;p&gt;について</h2>
-            <p>
-                &lt;p&gt;要素はパラグラフ(paragrah)を意味する。<br>
-                適切に使用し人が読みやすい文章を書くように心がけよう!
-            </p>
-            <h2>&lt;ul&gt;と&lt;li&gt;について</h2>
-            <p>
-                &lt;ul&gt;と&lt;li&gt;はlistを作る。この要素を使えば簡単にリストを作れるぞ！<br>
-                &lt;ul&gt;のcontentに&lt;li&gtで囲まれたモノがリストの要素になる
-                <ul>
-                    <li>りんご</li>
-                    <li>みかん</li>
-                    <li>ばなな</li>
-                </ul>
-                &lt;ul&gt;の代わりに&lt;ol&gt;を使用するとリストに順序がつく！
-                <ol>
-                    <li>りんご</li>
-                    <li>みかん</li>
-                    <li>ばなな</li>
-                </ol>
-                またリストを入れ子にすることもできるのだ！<br>
-                必要に応じてリストを作成しよう！
-                <ol>
-                    <li>
-                        りんご
-                        <ul>
-                            <li>世界一</li>
-                            <li>アリエーヌ</li>
-                            <li>ぜスター</li>
-                        </ul>
-                    </li>
-                    <li>みかん</li>
-                    <li>ばなな</li>
-                </ol>
-            </p>
-            <h2>&lt;em&gt;について</h2>
-            <p>
-                &lt;em&gt;は文字をイタリックにして強調できる。<br>
-                さらにこの要素を適用した文字は読み上げソフトを使用した時の音声も変化する。
-                <ul>
-                    <li>This is a real pen.</li>
-                    <li>This is a <em>real</em> pen.</li>
-                </ul>
-                このように二つの文を比較すると下の文のrealが強調されていることがわかる。
-            </p>
-            <h2>&lt;strong&gt;について</h2>
-            <p>
-                &lt;strong&gt;についてはこの要素で囲まれた部分をbold(太文字)にできる。<br>
-                このように次の文字を太文字にします。<strong>な、なんだってー！</strong>ね？:
-            </p>
-            <h2>&lt;dl&gt;と&lt;dt&gt;と&lt;dd&gt;について</h2>
-            <p>
-                &lt;dl&gt;と&lt;dt&gt;と&lt;dd&gt;について説明する<br>
-                説明リストと呼ばれる。用語の定義やQAなどに適している。
-                <dl>
-                    <dt>question : りんごてなんですか？</dt>
-                    <dl> answer: りんごは果物の一種で赤い。</dl>
-                </dl>
-            </p>
-            <h2>&lt;blockqutote&gt;について</h2>
-            <p>
-                blockquoteを使用することで引用であることを示すことができる。
-                <blockquote cite="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8">
-                    <p>blockquoteで囲まれた文はこのようになる</p>
-                </blockquote>
-            </p>            
-            <h2>&lt;q&gt;について</h2>
-            <p>
-                <code>&lt;q&gt;</code>　について。これはインライン引用を行うときに使用する。<br>
-                例 : <br>
-                q はquoteを意味します。q <q cite="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8">
-                は段落区切りが必要ないほど短い引用に適しています。</q>
-            </p>
-        </div>
-        <a href="../index.html">
-            <img src="../images/return.png" alt="戻る" width="50" height="50" style="position: absolute; right: 10px;">
-        </a>
+        <!-- header -->
+        <header>
+            <h1>HTML完全解説予定</h1>
+        </header>
+
+        <!-- main content-->
+        <main>
+            <div class="char-white">
+                <h2>目録</h2>
+                <p>
+                    <ol>
+                        <li><a href="#aboutP">&lt;p&gt;について</a></li>
+                    </ol>
+                </p>
+            </div>
+            <h1 class="char-white" > HTML要素について </h1>
+            <div class="char-white">
+                <h2 id="aboutP" >&lt;p&gt;について</h2>
+                <p>
+                    &lt;p&gt;要素はパラグラフ(paragrah)を意味する。<br>
+                    適切に使用し人が読みやすい文章を書くように心がけよう!
+                </p>
+                <h2>&lt;ul&gt;と&lt;li&gt;について</h2>
+                <p>
+                    &lt;ul&gt;と&lt;li&gt;はlistを作る。この要素を使えば簡単にリストを作れるぞ！<br>
+                    &lt;ul&gt;のcontentに&lt;li&gtで囲まれたモノがリストの要素になる
+                    <ul>
+                        <li>りんご</li>
+                        <li>みかん</li>
+                        <li>ばなな</li>
+                    </ul>
+                    &lt;ul&gt;の代わりに&lt;ol&gt;を使用するとリストに順序がつく！
+                    <ol>
+                        <li>りんご</li>
+                        <li>みかん</li>
+                        <li>ばなな</li>
+                    </ol>
+                    またリストを入れ子にすることもできるのだ！<br>
+                    必要に応じてリストを作成しよう！
+                    <ol>
+                        <li>
+                            りんご
+                            <ul>
+                                <li>世界一</li>
+                                <li>アリエーヌ</li>
+                                <li>ぜスター</li>
+                            </ul>
+                        </li>
+                        <li>みかん</li>
+                        <li>ばなな</li>
+                    </ol>
+                </p>
+                <h2>&lt;em&gt;について</h2>
+                <p>
+                    &lt;em&gt;は文字をイタリックにして強調できる。<br>
+                    さらにこの要素を適用した文字は読み上げソフトを使用した時の音声も変化する。
+                    <ul>
+                        <li>This is a real pen.</li>
+                        <li>This is a <em>real</em> pen.</li>
+                    </ul>
+                    このように二つの文を比較すると下の文のrealが強調されていることがわかる。
+                </p>
+                <h2>&lt;strong&gt;について</h2>
+                <p>
+                    &lt;strong&gt;についてはこの要素で囲まれた部分をbold(太文字)にできる。<br>
+                    このように次の文字を太文字にします。<strong>な、なんだってー！</strong>ね？:
+                </p>
+                <h2>&lt;dl&gt;と&lt;dt&gt;と&lt;dd&gt;について</h2>
+                <p>
+                    &lt;dl&gt;と&lt;dt&gt;と&lt;dd&gt;について説明する<br>
+                    説明リストと呼ばれる。用語の定義やQAなどに適している。
+                    <dl>
+                        <dt>question : りんごてなんですか？</dt>
+                        <dl> answer: りんごは果物の一種で赤い。</dl>
+                    </dl>
+                </p>
+                <h2>&lt;blockqutote&gt;について</h2>
+                <p>
+                    blockquoteを使用することで引用であることを示すことができる。
+                    <blockquote cite="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8">
+                        <p>blockquoteで囲まれた文はこのようになる</p>
+                    </blockquote>
+                </p>            
+                <h2>&lt;q&gt;について</h2>
+                <p>
+                    <code>&lt;q&gt;</code>　について。これはインライン引用を行うときに使用する。<br>
+                    例 : <br>
+                    q はquoteを意味します。q <q cite="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8">
+                    は段落区切りが必要ないほど短い引用に適しています。</q>
+                </p>
+                <h2>&lt;addr&gt;について</h2>
+                <p>
+                    &lt;addr&gt;は略語の解説をしたり簡単な注釈を入れたりするのに便利である。<br>
+                    addr要素で囲まれた文字にマウスオーバーするとaddrのtitleに設定した値が表示される。<br>
+                    例えば<addr title="マクドナルドのことである">マクド</addr>て言うよね？
+                </p>
+                <h2>その他にもたくさんのhtml要素がある</h2>
+                <p>
+                    <code>&lt;code&gt;</code>や<code>&lt;pre&gt;</code>
+                    や<code>&lt;sup&gt;</code>や<code>&lt;sub&gt;</code>などである
+                    何か書きたい形式があるのであれば調べてみよう。
+                </p>
+            </div> 
+            <a href="../index.html">
+                <img src="../images/return.png" alt="戻る" width="50" height="50" style="position: absolute; right: 10px;">
+            </a>
+        </main>
+        
+        <!-- footer -->
+        <footer>
+            <p>@Copyright 2099 by john smith. All rights reversed.</p>
+        </footer>
     </body>
 </html>
