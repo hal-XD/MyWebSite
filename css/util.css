@@ -6,3 +6,9 @@
 .char-white {
     color: #ffffff;
 }
+
+/* define table design */
+.orange_table {
+    border-color: salmon;
+    color: white;
+}
