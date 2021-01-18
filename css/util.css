@@ -11,8 +11,17 @@
     color:yellowgreen;
 }
 
+.char_blueviolet {
+    color:blueviolet;
+}
+
 /* define table design */
 .orange_table {
+    border: 2px #808080 solid;
     border-color: salmon;
     color: #2a9fa3a8;
+}
+
+/* over ride */
+li {
 }
