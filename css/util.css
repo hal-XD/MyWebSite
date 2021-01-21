@@ -44,6 +44,37 @@ p.speAAA {
 }
 
 .speBBB:hover {
-    color: white;
+    color: palevioletred;
     background-color: gold;
+    transform: rotate(0.3turn);
+}
+
+.sample_css_1 {
+    border-bottom: 5px solid red;
+    background-color: #000000;
+    color :aqua
+}
+
+#sample_css_2 {
+    font-weight: 500;
+    font-size: 2em;
+    text-decoration: blue wavy underline;
+}
+
+.sample_css_3,
+.sample_css_4 {
+    color: goldenrod;
+    background-color: #000000;
+}
+
+.sample_css_4 *:first-child {
+    color: red;
+    margin: 0;
+}
+
+.sample_css_5 {
+    border-color: crimson;
+    border-style: groove;
+    border-left: 5em;
+    border-right: 5em;
 }
