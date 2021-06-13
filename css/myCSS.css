@@ -1,0 +1,11 @@
+.base_style {
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: olivedrab;
+}
+
+.terminal {
+    background-color: black;
+    color: white;
+    overflow-x: scroll;
+}

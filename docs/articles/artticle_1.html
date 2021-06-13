@@ -2,10 +2,79 @@
 
 <html>
     <head>
-        <title>install Rust to WSL2</title>
+        <title>event when installed Rust to WSL2</title>
+        <link href="../../css/myCSS.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
-        <h1>WSL2にRustをインストールしてみた</h1>
-        <p></p>
+    <body class="base_style">
+        <h1>WSL2にRustを入れてみたときに生じたエラー</h1>
+        <h2>概要</h2>
+        <p>
+            <ul>
+                <li>WSL2はデフォルトでopensslとpkg-configが入っていないので、libssl-dev(openssl)とpkg-configをインストールする必要がある。</li>
+                <li>OPENSSL_LIB_DIR=/usr/lib/x86_64-linux-gnuを設定</li>
+                <li>OPENSSL_INCLUDE_DIR=/usr/include/opensslを設定</li>
+                <li>typoには注意する</li>
+            </ul>
+        </p>
+        <h2>試行錯誤の足跡</h2>
+        <p>cargo周りでいくつかエラーが出たのでその対処をここに記す。</p>
+        <p>
+            まずWSL2にはopensslとpkg-configがデフォルトでは入っていないのでそれを
+            インストールする必要がある。WSL2はubuntuなので下記の二つのコマンドを実行する。
+            <pre class="terminal">
+$<kbd>sudo apt install libssl-dev</kbd>
+$<kbd>sudo apt install pkg-config</kbd>
+            </pre>
+        </p>
+        <p>
+            そしてcargo-editをインストールしようとしたところ以下のエラーとなった。
+            <pre class="terminal">
+$<kbd>cargo install cargo-edit</kbd>
+<samp> -- ry --
+Compiling libgit2-sys v0.12.17+1.1.0
+error: failed to run custom build command for `openssl-sys v0.9.60`
+
+Caused by:
+  process didn't exit successfully: `/tmp/cargo-installcTXROc/release/build/openssl-sys-2144ca5ecb70af39/build-script-main` (exit code: 101)
+  --- stdout
+  cargo:rustc-cfg=const_fn
+  cargo:rerun-if-env-changed=X86_64_UNKNOWN_LINUX_GNU_OPENSSL_LIB_DIR
+  X86_64_UNKNOWN_LINUX_GNU_OPENSSL_LIB_DIR unset
+  cargo:rerun-if-env-changed=OPENSSL_LIB_DIR
+  OPENSSL_LIB_DIR = /usr/lib/x86_64-linux-gun/
+  cargo:rerun-if-env-changed=X86_64_UNKNOWN_LINUX_GNU_OPENSSL_INCLUDE_DIR
+  X86_64_UNKNOWN_LINUX_GNU_OPENSSL_INCLUDE_DIR unset
+  cargo:rerun-if-env-changed=OPENSSL_INCLUDE_DIR
+  OPENSSL_INCLUDE_DIR = /usr/include/openssl/
+
+  --- stderr
+  thread 'main' panicked at 'OpenSSL library directory does not exist: /usr/lib/x86_64-linux-gun/', /home/hal/.cargo/registry/src/github.com-1ecc6299db9ec823/openssl-sys-0.9.60/build/main.rs:66:9
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: build failed, waiting for other jobs to finish...
+error: failed to compile `cargo-edit v0.7.0`, intermediate artifacts can be found at `/tmp/cargo-installcTXROc`
+
+Caused by:
+  build failed</samp>
+            </pre>
+            エラーを読む限りではOpenSSLのディレクトリが存在しないことが問題のようだ。
+            <a href="https://github.com/sfackler/rust-openssl/issues/766">rustのissueに同様の事象がある。</a>
+            issue内で見つけた下記二点を実行。
+            <pre class="terminal">
+$<kbd>pkg-config --cflags openssl</kbd>
+
+$<kbd>pkg-config --libs openssl</kbd> 
+<samp>-lssl -lcrypto</samp>
+            </pre>
+            しかしながらエラーは解決せず、変化もなかった。/usr/lib/x86_64-linux-gun配下を調べてみると
+            <pre class="terminal">
+$<kbd> ls /usr/lib/x86_64-linux-gnu/ | grep open</kbd>
+<samp>libxmlsec1-openssl.so.1
+libxmlsec1-openssl.so.1.2.28</samp>
+            </pre>
+            となっていて確かにopensslに関するディレクトリは存在していない。OPENSSL_LIB_DIRが間違っているか必要なものが抜けているかの可能性が
+            高そうである。
+            /usr/lib/x86_64-linux-gunではなく
+            /usr/lib/x86_64-linux-gnuであった。
+        </p>
     </body>
 </html>
